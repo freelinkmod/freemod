@@ -107,18 +107,16 @@ header .left p {
 .download-btn {
   background: #424242;
   color: #fff;
-  display: flex;
   align-items: center;
   gap: 16px;
   padding: 8px 16px;
   border-radius: 10px;
   font-size: 14px;
-  width: 180px;
+  width: 210px;
 }
 
 .download-btn .btn-icon img {
   height: 36px;
-  display: flex;
 }
 
 .download-btn .btn-text div:first-child {
@@ -332,6 +330,8 @@ section h2 {
 .download-btn {
   background: #ff4757;
   color: #fff;
+  display: flex;
+    flex-direction: column;
   padding: 8px 16px;
   border-radius: 25px;
   text-decoration: none;
@@ -380,7 +380,41 @@ nav .menu-icon,
   margin-bottom: 16px;
 }
 @media (max-width: 850px) {
+
   
+.buttons {
+  display: column;
+  gap: 24px;
+}
+
+.download-btn {
+  color: #fff;
+  display: column;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  width: 210px;
+}
+
+.download-btn .btn-icon img {
+  height: 36px;
+  display: column;
+}
+
+.download-btn .btn-text div:first-child {
+  text-transform: uppercase;
+}
+
+.download-btn .btn-text div:last-child {
+  font-weight: bold;
+}
+
+header .right img {
+  height: 460px;
+  display: flex;
+}
  nav {
     width: calc(100% - 32px);
     left: 50%;
@@ -439,8 +473,6 @@ nav .menu-icon,
     display: none;
   }
 
-  body {
-  }
  nav {
     width: calc(100% - 32px);
     left: 50%;
@@ -510,7 +542,6 @@ nav .menu-icon,
     font-size: 40px;
   }
 
-
   section h2 {
     position: relative;
     margin-bottom: 40px;
@@ -526,7 +557,22 @@ nav .menu-icon,
     left: 50%;
     transform: translateX(-50%);
   }
+.buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
 
+  .download-btn {
+    width: 90%;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .download-btn .btn-icon img {
+    height: 28px;
+  }
   /* Featured section */
 #features .content {
     padding: 10%;
@@ -610,4 +656,140 @@ nav .menu-icon,
     transform: translateY(0);
   }
 
+}
+/* === Extra small screens (phones < 350px) === */
+@media (max-width: 350px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  nav {
+    width: calc(100% - 20px);
+    padding: 10px 12px;
+    top: 20px;
+    border-radius: 16px;
+  }
+
+  nav .logo img {
+    width: 40px;
+  }
+
+  nav .menu-icon img {
+    height: 24px;
+  }
+
+  /* Mobile nav menu */
+  .mobile-nav-menu {
+    top: 70px;
+    right: 10px;
+    gap: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  header {
+    padding-top: 140px;
+    height: fit-content;
+  }
+
+  header .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  header .left p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  header .right img {
+    height: 250px;
+  }
+
+  /* Buttons stacked vertically */
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .download-btn {
+    width: 90%;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .download-btn .btn-icon img {
+    height: 28px;
+  }
+
+  /* Features section */
+  #features .content {
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #features .feature-card {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  #features h3 {
+    font-size: 15px;
+  }
+
+  #features p {
+    font-size: 13px;
+  }
+
+  #features .icon {
+    height: 45px;
+    width: 45px;
+  }
+
+  #features .platform-icons img {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Slides (featured apps carousel) */
+  .slide img {
+    width: 90%;
+  }
+
+  .slide-btn {
+    font-size: 1.5rem;
+    padding: 6px 10px;
+  }
+
+  /* Footer */
+  .copyright {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevents side scroll and background shift */
 }
