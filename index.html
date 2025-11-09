@@ -1,125 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>FreeMod | Game Mods Download</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #0f0f1a;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-    }
-
-    header {
-      margin-top: 15px;
-      margin-bottom: 25px;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      color: #00c3ff;
-      font-weight: 700;
-    }
-
-    header p {
-      font-size: 0.95rem;
-      color: #aaa;
-    }
-
-    .card {
-      background: #1b1b2b;
-      border-radius: 18px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      padding: 20px;
-      margin: 25px auto;
-      max-width: 370px;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover { transform: translateY(-4px); }
-
-    .card img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-
-    .card h2 {
-      color: #00c3ff;
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      color: #ccc;
-      margin-bottom: 18px;
-      line-height: 1.5;
-    }
-
-    .download-btn {
-      display: block;
-      background: linear-gradient(90deg, #00c3ff, #0091cc);
-      color: #000;
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 30px;
-      padding: 16px 0;
-      width: 100%;
-      font-size: 1rem;
-      transition: opacity 0.3s ease;
-    }
-
-    .download-btn:hover {
-      opacity: 0.85;
-    }
-
-    footer {
-      margin-top: 40px;
-      color: #666;
-      font-size: 0.85rem;
-    }
-
-    /* MOBILE ONLY LOOK */
-    @media (min-width: 600px) {
-      body {
-        max-width: 400px;
-        margin: auto;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>🔥 FreeMod</h1>
-    <p>Get the latest modded games for free!</p>
-  </header>
-
-  <div class="card">
-    <img src="https://i.pinimg.com/736x/9a/77/db/9a77db0d3793bb8c4170658776d948c8.jpg" alt="GTA 5 Mobile MOD">
-    <h2>GTA 5 Mobile (MOD APK)</h2>
-    <p>Play GTA 5 on your Android with all missions and unlimited money unlocked.</p>
-    <a href="https://lockedapp.org/cl/i/qnko56" class="download-btn">⬇️ Download GTA 5 MOD</a>
-  </div>
-
-  <div class="card">
-    <img src="data:image/jpeg;base64,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" alt="PushSB Mod">
-    <h2>PushSB Mod</h2>
-    <p>Play the best mobile skate game mod..</p>
-    <a href="https://lockedapp.org/cl/i/pqo3mn" class="download-btn">⬇️ Download PushSB Mod</a>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
   
-   <div class="card">
-<img src="https://images.seeklogo.com/logo-png/40/1/forza-horizon-5-logo-png_seeklogo-406612.png" alt="forza horizon 5 Mobile ">
-    <h2>PushSB Mod</h2>
-    <p>Play forza horizon 5 on your Android with all missions.</p>
-    <a href="https://lockedapp.org/cl/i/l7k8vd" class="download-btn">⬇️ Download Forza Horizon 5 Mod</a>
-  </div>
-  <footer>© 2025 FreeMod | All rights reserved.</footer>
-</body>
-</html>
+  <body>
+    <nav>
+      <a href="#" class="logo"><img src="images/logo.png" alt="" /></a>
+      <div class="nav-items">
+        <a class="nav-link" href="#Home">Home</a>
+        <a class="nav-link" href="#featured">Apps</a>
+        <a class="nav-link" href="#features">Games</a>
+      </div>
 
+      <div class="menu-icon">
+        <img src="images/menu-icon.svg" alt="Menu" />
+      </div>
+    </nav>
+
+    <div class="mobile-nav-menu">
+      <a class="nav-link" href="#Home">Home</a>
+      <a class="nav-link" href="#featured">Apps</a>
+      <a class="nav-link" href="#features">Games</a>
+    </div>
+
+    <header>
+      <div id="Home" class="container">
+        <div class="left">
+          <h1>Download the best apps and modded games for Android & iOS</h1>
+          <p>
+            Play smarter with unlocked features, premium access, and endless fun!
+          </p>
+
+          <div class="buttons">
+            <a href="#features" class="download-btn">
+              <div class="btn-icon">
+                <img src="images/apple-black-logo.png" alt="" />
+              </div>
+              <div class="btn-text">
+                <div  href="#features">Get On</div>
+                <div>IOS</div>
+              </div>
+            </a>
+
+            <a href="#features" class="download-btn">
+              <div class="btn-icon">
+                <img src="images/android-logo.png" alt="" />
+              </div>
+              <div class="btn-text">
+                <div >Download On</div>
+                <div>Android</div>
+              </div>
+            </a>
+            
+          </div>
+        </div>
+
+        <div id="apps" class="right">
+          <img src="images/hero-image.png" alt="" />
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+  <section id="featured">
+    <h2>Apps</h2>
+    <div class="slider">
+      <button class="slide-btn prev">&#10094;</button>
+      <div class="slide-track">
+        <div class="slide">
+          <img src="images/capcut.jpg" alt="CapCut" />
+          <div class="overlay">
+            <h3>CapCut</h3>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/ytmusic.jpg" alt="YouTube Music" />
+          <div class="overlay">
+            <h3>YouTube Music</h3>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/yt.jpg" alt="YouTube" />
+          <div class="overlay">
+            <h3>YouTube</h3>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/netflix.jpg" alt="Netflix" />
+          <div class="overlay">
+            <h3>Netflix</h3>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+      <button class="slide-btn next">&#10095;</button>
+    </div>
+  </section>
+</div>
+      </section>
+
+      <section id="features">
+  <h2>Games</h2>
+  <div class="content">
+
+    <a href="https://redirectapps.org/cl/i/qnko56" target="_blank">
+    <div class="feature-card">
+      <!-- Background cover -->
+      <div class="cover">
+        
+        <img src="images/gta5cover.jpg" alt="GTA 5 Cover" />
+      </div>
+
+      <!-- Platform logos -->
+      <div class="platform-icons">
+        <img src="images/android-logo.png" alt="Android" />
+        <img src="images/apple-black-logo.png" alt="iOS" />
+      </div>
+
+      <div class="icon">
+        <img src="images/gta5.png" alt="GTA 5" />
+      </div>
+
+      <h3>GTA 5 MOBILE</h3>
+      <p>Play GTA 5 easily on your mobile</p>
+      
+    </div>
+    </a>
+
+    <a href="https://applocked.org/cl/i/7jdq39" target="_blank">
+    <div class="feature-card">
+      <div class="cover">
+        <img src="images/robloxcover.jpeg" alt="roblox Cover" />
+      </div>
+      <div class="platform-icons">
+        <img src="images/android.png" alt="Android" />
+        <img src="images/applelogo.png" alt="iOS" />
+      </div>
+      <div class="icon">
+        <img src="images/roblox.svg" alt="roblox" />
+      </div>
+      <h3>Roblox MOD</h3>
+      <p>Enjoy Roblox with unlimited Robux</p>
+    </div>
+
+    <a href="https://redirectapps.org/cl/i/pqo3mn" target="_blank">
+    <div class="feature-card">
+      <div class="cover">
+        <img src="images/skatecover.jpeg" alt="skate Cover" />
+      </div>
+      <div class="platform-icons">
+        <img src="images/android.png" alt="Android" />
+        <img src="images/applelogo.png" alt="iOS" />
+      </div>
+      <div class="icon">
+        <img src="images/skate.png" alt="skate" />
+      </div>
+      <h3>PushSB MOD</h3>
+      <p>Enjoy Roblox with unlimited Robux</p>
+    </div></a>
+
+    <a href="https://redirectapps.online/cl/i/l7k8vd" target="_blank">
+    <div class="feature-card">
+      <div class="cover">
+        <img src="images/forza.jpg" alt="FORZA Cover" />
+      </div>
+      <div class="platform-icons">
+        <img src="images/android.png" alt="Android" />
+        <img src="images/applelogo.png" alt="iOS" />
+      </div>
+      <div class="icon">
+        <img src="images/forzahorizon.png" alt="FORZA" />
+      </div>
+      <h3>Forza Horizon 5 MOBILE</h3>
+      <p>Enjoy Roblox with unlimited Robux</p>
+    </div></a>
+  </div>
+</section>
+
+
+
+        <div class="copyright">
+          <p>Copyright playdownload © 2025</p>
+          <div class="socials">
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
