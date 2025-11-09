@@ -1,795 +1,199 @@
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(90deg, #141414 0%, #110630 100%);
-}
-
-p {
-  line-height: 180%;
-  font-size: 16px;
-}
-
-a {
-  text-decoration: none;
-  color: #f185f1;
-}
-
-nav {
-  position: fixed;
-  top: 30px;
-  background: linear-gradient(
-    90deg,
-    rgba(21, 10, 65, 0.9) 0%,
-    rgba(105, 2, 105, 0.4) 100%
-  );
-  backdrop-filter: blur(10px);
-  width: 900px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 32px;
-  border-radius: 24px;
-  box-shadow: 0 4px 50px -8px rgba(0, 0, 0, 0.2);
-  z-index: 300;
-}
-
-nav .logo img {
-  width: 60px; /* adjust this value for smaller/larger size */
-  height: auto;
-  object-fit: contain;
-  border-radius: 20px;
-}
-
-nav .nav-items {
-  display: flex;
-  gap: 50px;
-}
-
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  text-align: center;
-}
-
-/* Header */
-
-header {
-  height: 110vh;
-  min-height: 600px;
-  max-height: 800px;
-  background: linear-gradient(90deg, #141414 0%, #110630 100%);
-}
-
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-}
-
-header .left {
-  max-width: 500px;
-}
-
-h1 {
-  font-size: 50px;
-  line-height: 130%;
-  margin: 0;
-  background: linear-gradient(90deg, #8f059e 0%, #9e08fb 100%);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-header .left p {
-  background: linear-gradient(90deg, #8f059e 0%, #8300b6 100%);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  line-height: 200%;
-}
-
-.buttons {
-  display: flex;
-  gap: 24px;
-}
-
-.download-btn {
-  background: #424242;
-  color: #fff;
-  align-items: center;
-  gap: 16px;
-  padding: 8px 16px;
-  border-radius: 10px;
-  font-size: 14px;
-  width: 210px;
-}
-
-.download-btn .btn-icon img {
-  height: 36px;
-}
-
-.download-btn .btn-text div:first-child {
-  text-transform: uppercase;
-}
-
-.download-btn .btn-text div:last-child {
-  font-weight: bold;
-}
-
-header .right img {
-  height: 460px;
-  display: flex;
-}
-
-/* Featured Section */
-section {
-  padding: 50px 32px;
-}
-
-section h2 {
-  color: #8300b6;
-  text-align: center;
-  margin: 0;
-  margin-bottom: 16px;
-}
-
-/* Featured section container */
-#featured {
-  box-shadow: 0 5px 55px -15px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  padding-top: 30px;
-  margin-top: -90px;
-  background: linear-gradient(90deg, #400a42 0%, #180352 100%);
-}
-
-/* Title inside featured */
-#featured h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #bb0785;
-}
-
-/* Features layout */
-#features .content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
-}
-/* Feature card base */
-#features .feature-card {
-  position: relative;
-  background: linear-gradient(90deg, #ebfefe 0%, #eafef3 100%);
-  border-radius: 20px;
-  padding: 24px;
-  overflow: hidden;
-  color: #222;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-/* Hover effect */
-#features .feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* Cover background image */
-#features .feature-card .cover {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-/* Cover background image */
-#features .feature-card .cover img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.6; /* increased from 0.25 to 0.6 */
-  border-radius: 20px;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Gradient overlay for readability */
-#features .feature-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(235, 254, 254, 0.65) 0%, rgba(234, 254, 243, 0.65) 100%);
-  border-radius: 20px;
-  z-index: 1; /* ensures it's above the image but below text */
-  pointer-events: none;
-  transition: background 0.3s ease;
-}
-
-/* Hover effect on overlay + image */
-#features .feature-card:hover::after {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(234, 254, 243, 0.5) 100%);
-}
-
-#features .feature-card:hover .cover img {
-  opacity: 5; /* slightly higher on hover */
-  transform: scale(1.05); /* optional subtle zoom on hover */
-}
-
-
-/* Make content visible above everything */
-#features .feature-card > *:not(.cover) {
-  position: relative;
-  z-index: 2;
-}
-
-.feature-card img {
-  width: 60px; /* adjust this value for smaller/larger size */
-  height: auto;
-  object-fit: contain;
-  border-radius: 20px;
-}
-/* Keep main content above overlays */
-#features .feature-card > * {
-  position: relative;
-  z-index: 2;
-}
-
-/* Platform icons (Android + iOS) */
-#features .feature-card .platform-icons {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 6px;
-  z-index: 3;
-}
-
-#features .feature-card .platform-icons img {
-  width: 22px;
-  height: 22px;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
   
-  object-fit: contain;
-}
-
-/* Icon box inside card */
-#features .icon {
-  height: 60px;
-  width: 60px;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #fee3e0 0%, #fee9e6 100%);
-  display: grid;
-  place-items: center;
-}
-
-#features h3 {
-  font-size: 18px;
-  margin-top: 12px;
-  margin-bottom: 6px;
-}
-
-#features p {
-  font-size: 15px;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.slider {
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.slide-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-  position: relative;
-  min-width: 100%;
-}
-
-.slide img {
-  height: auto;
-  width: 70%;
-  border-radius: 15px;
-}
-
-/* Hover overlay */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  transition: opacity 0.3s ease;
-  border-radius: 15px;
-}
-
-.slide:hover .overlay {
-  opacity: 1;
-}
-
-.overlay h3 {
-  margin-bottom: 10px;
-  font-size: 1.4rem;
-}
-
-.download-btn {
-  background: #ff4757;
-  color: #fff;
-  display: flex;
-    flex-direction: column;
-  padding: 8px 16px;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.download-btn:hover {
-  background: #e84118;
-}
-
-/* Buttons */
-.slide-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.7);
-  border: none;
-  font-size: 2rem;
-  padding: 8px 12px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  z-index: 10;
-}
-
-.slide-btn:hover {
-  background: rgba(255,255,255,0.9);
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
-
-nav .menu-icon,
-.mobile-nav-menu {
-  display: none;
-}
-.copyright{
-  color: #8300b6;
-  text-align: center;
-  margin: 0;
-  margin-bottom: 16px;
-}
-@media (max-width: 850px) {
-
-  
-.buttons {
-  display: column;
-  gap: 24px;
-}
-
-.download-btn {
-  color: #fff;
-  display: column;
-  align-items: center;
-  gap: 16px;
-  padding: 8px 16px;
-  border-radius: 10px;
-  font-size: 14px;
-  width: 210px;
-}
-
-.download-btn .btn-icon img {
-  height: 36px;
-  display: column;
-}
-
-.download-btn .btn-text div:first-child {
-  text-transform: uppercase;
-}
-
-.download-btn .btn-text div:last-child {
-  font-weight: bold;
-}
-
-header .right img {
-  height: 460px;
-  display: flex;
-}
- nav {
-    width: calc(100% - 32px);
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 12px 16px;
-  }
-
-  nav .nav-items {
-    display: none;
-  }
-
-  nav .menu-icon {
-    display: block;
-    cursor: pointer;
-    z-index: 400;
-  }
-
-  nav .menu-icon img {
-    height: 28px;
-    width: auto;
-    display: flex;
-  }
-
-  .mobile-nav-menu {
-    position: fixed;
-    top: 70px;
-    right: 16px;
-    display: flex;
-    flex-direction: column;
-    background: rgba(21, 10, 65, 0.95);
-    padding: 12px 20px;
-    border-radius: 12px;
-    gap: 16px;
-    font-size: 16px;
-    box-shadow: 0 4px 40px rgba(0,0,0,0.3);
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    z-index: 500;
-  }
-
-  .mobile-nav-menu.active {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-}
-@media (max-width: 600px) {
-  
-  section {
-    padding-inline: 0;
-  }
-
-  nav .nav-items {
-    display: none;
-  }
-
- nav {
-    width: calc(100% - 32px);
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 12px 16px;
-  }
-
-  nav .nav-items {
-    display: none;
-  }
-
-  nav .menu-icon {
-    display: block;
-    cursor: pointer;
-    z-index: 400;
-  }
-
-  nav .menu-icon img {
-    height: 28px;
-    width: auto;
-    display: flex;
-  }
-
-  .mobile-nav-menu {
-    position: fixed;
-    top: 70px;
-    right: 16px;
-    display: flex;
-    flex-direction: column;
-    background: rgba(21, 10, 65, 0.95);
-    padding: 12px 20px;
-    border-radius: 12px;
-    gap: 16px;
-    font-size: 16px;
-    box-shadow: 0 4px 40px rgba(0,0,0,0.3);
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    z-index: 500;
-  }
-
-  .mobile-nav-menu.active {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-  header .container {
-    flex-direction: column;
-  }
-
-  header {
-    max-height: fit-content;
-    height: fit-content;
-    padding-top: 160px;
-  }
-
-  header .right img {
-    height: 350px;
-  }
-
-  .container {
-    padding: 0 32px;
-  }
-
-  h1 {
-    font-size: 40px;
-  }
-
-  section h2 {
-    position: relative;
-    margin-bottom: 40px;
-  }
-
-  section h2::after {
-    content: "";
-    position: absolute;
-    background: #000;
-    width: 30px;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-.buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .download-btn {
-    width: 90%;
-    justify-content: center;
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
-  .download-btn .btn-icon img {
-    height: 28px;
-  }
-  /* Featured section */
-#features .content {
-    padding: 10%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-  }
-
-  #features .feature-card {
-    padding: 18px;
-  }
-
-  #features .icon {
-    height: 50px;
-    width: 50px;
-  }
-
-  #features h3 {
-    font-size: 16px;
-  }
-
-  #features p {
-    font-size: 14px;
-  }
-
-  #features .platform-icons img {
-    width: 18px;
-    height: 18px;
-  }
-
-
-  /* Pricing Section */
-
-  #pricing .content {
-    grid-template-columns: 1fr;
-  }
-
-  #pricing .plan {
-    padding-inline: 0;
-  }
-
-  /* Footer */
-
-  footer .content {
-    flex-direction: column;
-  }
-
-  footer .right {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  footer .copyright {
-    flex-direction: column;
-  }
-
-  /* Mobile nav menu */
-
-  .mobile-nav-menu {
-    position: fixed;
-    right: 32px;
-    top: 100px;
-    display: flex;
-    flex-direction: column;
-    padding: 8px 16px;
-    gap: 16px;
-    font-size: 16px;
-    border-radius: 10px;
-    box-shadow: 0 4px 40px -8px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    z-index: 600;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: all 300ms ease;
-  }
-
-  .mobile-nav-menu.active {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-
-}
-/* === Extra small screens (phones < 350px) === */
-@media (max-width: 350px) {
-
-  body {
-    font-size: 14px;
-  }
-
-  nav {
-    width: calc(100% - 20px);
-    padding: 10px 12px;
-    top: 20px;
-    border-radius: 16px;
-  }
-
-  nav .logo img {
-    width: 40px;
-  }
-
-  nav .menu-icon img {
-    height: 24px;
-  }
-
-  /* Mobile nav menu */
-  .mobile-nav-menu {
-    top: 70px;
-    right: 10px;
-    gap: 10px;
-    padding: 10px 14px;
-    font-size: 14px;
-    border-radius: 10px;
-  }
-
-  header {
-    padding-top: 140px;
-    height: fit-content;
-  }
-
-  header .container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 28px;
-    line-height: 1.2;
-  }
-
-  header .left p {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  header .right img {
-    height: 250px;
-  }
-
-  /* Buttons stacked vertically */
-  .buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .download-btn {
-    width: 90%;
-    justify-content: center;
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
-  .download-btn .btn-icon img {
-    height: 28px;
-  }
-
-  /* Features section */
-  #features .content {
-    padding: 0 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  #features .feature-card {
-    padding: 14px;
-    border-radius: 16px;
-  }
-
-  #features h3 {
-    font-size: 15px;
-  }
-
-  #features p {
-    font-size: 13px;
-  }
-
-  #features .icon {
-    height: 45px;
-    width: 45px;
-  }
-
-  #features .platform-icons img {
-    width: 16px;
-    height: 16px;
-  }
-
-  /* Slides (featured apps carousel) */
-  .slide img {
-    width: 90%;
-  }
-
-  .slide-btn {
-    font-size: 1.5rem;
-    padding: 6px 10px;
-  }
-
-  /* Footer */
-  .copyright {
-    font-size: 12px;
-    padding: 10px;
-  }
-}
-
-
-
-
-
-
-
-
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden; /* Prevents side scroll and background shift */
-}
+  <body>
+    <nav>
+      <a href="#" class="logo"><img src="images/logo.png" alt="" /></a>
+      <div class="nav-items">
+        <a class="nav-link" href="#Home">Home</a>
+        <a class="nav-link" href="#featured">Apps</a>
+        <a class="nav-link" href="#features">Games</a>
+      </div>
+
+      <div class="menu-icon">
+        <img src="images/menu-icon.svg" alt="Menu" />
+      </div>
+    </nav>
+
+    <div class="mobile-nav-menu">
+      <a class="nav-link" href="#Home">Home</a>
+      <a class="nav-link" href="#featured">Apps</a>
+      <a class="nav-link" href="#features">Games</a>
+    </div>
+
+    <header>
+      <div id="Home" class="container">
+        <div class="left">
+          <h1>Download the best apps and modded games for Android & iOS</h1>
+          <p>
+            Play smarter with unlocked features, premium access, and endless fun!
+          </p>
+
+          <div class="buttons">
+            <a href="#features" class="download-btn">
+              <div class="btn-icon">
+                <img src="images/apple-black-logo.png" alt="" />
+              </div>
+              <div class="btn-text">
+                <div  href="#features">Get On</div>
+                <div>IOS</div>
+              </div>
+            </a>
+
+            <a href="#features" class="download-btn">
+              <div class="btn-icon">
+                <img src="images/android-logo.png" alt="" />
+              </div>
+              <div class="btn-text">
+                <div >Download On</div>
+                <div>Android</div>
+              </div>
+            </a>
+            
+          </div>
+        </div>
+
+        <div id="apps" class="right">
+          <img src="images/hero-image.png" alt="" />
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+  <section id="featured">
+    <h2>Apps</h2>
+    <div class="slider">
+      <button class="slide-btn prev">&#10094;</button>
+      <div class="slide-track">
+        <div class="slide">
+          <img src="images/capcut.jpg" alt="CapCut" />
+          <div class="overlay">
+            <h3>CapCut</h3>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/ytmusic.jpg" alt="YouTube Music" />
+          <div class="overlay">
+            <h3>YouTube Music</h3>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/yt.jpg" alt="YouTube" />
+          <div class="overlay">
+            <h3>YouTube</h3>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/netflix.jpg" alt="Netflix" />
+          <div class="overlay">
+            <h3>Netflix</h3>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+      <button class="slide-btn next">&#10095;</button>
+    </div>
+  </section>
+</div>
+      </section>
+
+      <section id="features">
+  <h2>Games</h2>
+  <div class="content">
+
+    <a href="https://redirectapps.org/cl/i/qnko56" target="_blank">
+    <div class="feature-card">
+      <div class="cover">
+        <img src="images/gta5cover.jpg" alt="GTA 5 Cover" />
+      </div>
+      <div class="platform-icons">
+        <img src="images/android-logo.png" alt="Android" />
+        <img src="images/apple-black-logo.png" alt="iOS" />
+      </div>
+      <div class="icon">
+        <img src="images/gta5.png" alt="GTA 5" />
+      </div>
+      <h3>GTA 5 MOBILE</h3>
+      <p>Play GTA 5 easily on your mobile</p>
+    </div>
+    </a>
+
+    <a href="https://applocked.org/cl/i/7jdq39" target="_blank">
+    <div class="feature-card">
+      <div class="cover">
+        <img src="images/robloxcover.jpeg" alt="roblox Cover" />
+      </div>
+      <div class="platform-icons">
+        <img src="images/android-logo.png" alt="Android" />
+        <img src="images/apple-black-logo.png" alt="iOS" />
+      </div>
+      <div class="icon">
+        <img src="images/roblox.svg" alt="roblox" />
+      </div>
+      <h3>Roblox MOD</h3>
+      <p>Enjoy Roblox with unlimited Robux</p>
+    </div>
+    </a>
+    <a href="https://redirectapps.org/cl/i/pqo3mn" target="_blank">
+    <div class="feature-card">
+      <div class="cover">
+        <img src="images/skatecover.jpeg" alt="skate Cover" />
+      </div>
+      <div class="platform-icons">
+        <img src="images/android-logo.png" alt="Android" />
+        <img src="images/apple-black-logo.png" alt="iOS" />
+      </div>
+      <div class="icon">
+        <img src="images/skate.png" alt="skate" />
+      </div>
+      <h3>PushSB MOD</h3>
+      <p>Enjoy the best skate game on android & IOS</p>
+    </div></a>
+
+    <a href="https://redirectapps.online/cl/i/l7k8vd" target="_blank">
+    <div class="feature-card">
+      <div class="cover">
+        <img src="images/forza.jpg" alt="FORZA Cover" />
+      </div>
+      <div class="platform-icons">
+        <img src="images/android-logo.png" alt="Android" />
+        <img src="images/apple-black-logo.png" alt="iOS" />
+      </div>
+      <div class="icon">
+        <img src="images/forzahorizon.png" alt="FORZA" />
+      </div>
+      <h3>Forza Horizon 5 MOBILE</h3>
+      <p>Enjoy Forza Horizon 5 on Mobile </p>
+    </div></a>
+  </div>
+</section>
+
+
+
+        <div class="copyright">
+          <p>Copyright playdownload © 2025</p>
+          <div class="socials">
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
