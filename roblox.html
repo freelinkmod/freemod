@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Roblox — Robux Demo (Safe)</title>
+<style>
+  :root{
+    --bg:#f2f2f4;
+    --card:#ffffff;
+    --accent:#7b1cff; /* purple */
+    --muted:#b9b9bf;
+    --shadow: 0 10px 20px rgba(32,32,40,0.08);
+    --radius:18px;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  html,body{height:100%;margin:0;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:28px;}
+  .container{width:100%;max-width:420px;position:relative}
+  .logo-pill{
+    position:absolute;left:50%;transform:translateX(-50%) translateY(-56px);
+    background:linear-gradient(180deg,#fff,#fff);border-radius:22px;padding:10px 28px;
+    box-shadow:0 8px 20px rgba(123,28,255,0.14);border:4px solid rgba(123,28,255,0.18);
+    font-weight:800;letter-spacing:2px;font-size:28px;color:#000;text-align:center;
+  }
+  .card{
+    background:var(--card);border-radius:24px;padding:36px 28px 28px;box-shadow:var(--shadow);
+  }
+  h1{margin:0 0 6px;font-size:28px;text-align:center}
+  .subtitle{display:block;text-align:center;color:var(--accent);letter-spacing:4px;font-size:12px;margin-bottom:16px}
+  label{display:block;color:var(--muted);font-size:11px;margin:18px 0 8px}
+  .input-row{display:flex;gap:12px;align-items:center}
+  .platforms{display:flex;gap:10px;margin-top:8px}
+  .plat{flex:1;background:#f6f6f8;padding:12px;border-radius:12px;box-shadow:inset 0 2px 6px rgba(0,0,0,0.03);text-align:center;cursor:pointer}
+  .plat.active{border:2px solid rgba(123,28,255,0.18);box-shadow:0 6px 18px rgba(123,28,255,0.06)}
+  .username{flex:1;background:#f6f6f8;padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.03)}
+  .continue{
+    margin-top:22px;background:linear-gradient(90deg,var(--accent),#9d3cff);
+    color:#fff;padding:14px;border-radius:12px;border:none;width:100%;font-weight:800;letter-spacing:1px;cursor:pointer;font-size:16px;
+    box-shadow:0 10px 18px rgba(123,28,255,0.18);
+  }
+  /* modal */
+  .overlay{position:fixed;inset:0;background:rgba(8,8,12,0.36);display:flex;align-items:center;justify-content:center;visibility:hidden;opacity:0;transition:opacity .18s,visibility .18s}
+  .overlay.show{visibility:visible;opacity:1}
+  .modal{width:92%;max-width:420px;background:var(--card);border-radius:16px;padding:18px;box-shadow:var(--shadow);text-align:center}
+  .choices{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:14px 0}
+  .choice{flex:1 1 45%;min-width:120px;background:#f6f6f8;padding:12px;border-radius:12px;cursor:pointer;font-weight:700}
+  .choice.selected{background:linear-gradient(180deg,#7b1cff,#9d3cff);color:#fff;box-shadow:0 10px 22px rgba(123,28,255,0.12)}
+  .start-gen{margin-top:12px;background:var(--accent);color:#fff;padding:12px;border-radius:10px;border:none;width:100%;font-weight:800;cursor:pointer}
+  /* progress */
+  .progress-wrap{margin-top:16px;text-align:left}
+  .step{display:flex;gap:10px;align-items:center;padding:8px 12px;border-radius:10px;background:#fbfbfc;margin-bottom:8px}
+  .bullet{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:#efeff1;font-weight:700}
+  .bullet.ok{background:linear-gradient(90deg,#aee2b3,#6fd68f);color:#064a0f}
+  .bullet.fail{background:linear-gradient(90deg,#ffc7c7,#ff8f8f);color:#6b0b0b}
+  .step .text{flex:1;color:#333}
+  .final{padding:18px;border-radius:12px;background:#f6f6f8;margin-top:12px;text-align:center}
+  .note{font-size:12px;color:#666;margin-top:8px}
+  footer.small{margin-top:10px;text-align:center;font-size:12px;color:#888}
+  /* disclaimers */
+  .demo-tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(123,28,255,0.08);color:var(--accent);font-weight:700;margin-bottom:6px}
+  @media (min-width:900px){body{padding:40px}}
+</style>
+</head>
+<body>
+<div class="container" role="main">
+  <div class="logo-pill">ROBLOX</div>
+
+  <div class="card" aria-labelledby="title">
+    <div style="text-align:center">
+      <h1 id="title">Roblox</h1>
+      <span class="subtitle">ROBUX GENERATOR</span>
+    </div>
+
+    <label for="username">USERNAME:</label>
+    <div class="input-row">
+      <div style="width:54px;height:54px;border-radius:12px;background:linear-gradient(180deg,var(--accent),#9d3cff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800">
+        ✦
+      </div>
+      <input id="username" class="username" placeholder="Username" aria-label="username" />
+    </div>
+
+    <label>YOUR PLATFORM</label>
+    <div class="platforms" role="list">
+      <div class="plat active" data-plat="windows" role="listitem" tabindex="0">Windows</div>
+      <div class="plat" data-plat="xbox" role="listitem" tabindex="0">Xbox</div>
+      <div class="plat" data-plat="android" role="listitem" tabindex="0">Android</div>
+      <div class="plat" data-plat="ios" role="listitem" tabindex="0">iOS</div>
+    </div>
+
+    <button class="continue" id="continueBtn">CONTINUE</button>
+
+  </div>
+</div>
+
+<!-- modal -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <h3 id="modalTitle" style="margin:0">Choose amount</h3>
+    <div class="choices" id="choices">
+      <div class="choice" data-amount="1000">1000 Robux</div>
+      <div class="choice" data-amount="2000">2000 Robux</div>
+      <div class="choice" data-amount="3000">3000 Robux</div>
+      <div class="choice" data-amount="9999">9999 Robux</div>
+    </div>
+    <button class="start-gen" id="startGen">Start</button>
+
+    <div class="progress-wrap" id="progressWrap" style="display:none">
+      <div class="step"><div class="bullet" id="b1">1</div><div class="text" id="t1">Connecting to <strong id="u1"></strong>…</div></div>
+      <div class="step"><div class="bullet" id="b2">2</div><div class="text" id="t2">Generating resources — please wait…</div></div>
+      <div class="step"><div class="bullet" id="b3">3</div><div class="text" id="t3">Running verification</div></div>
+      <div class="final" id="finalBox" style="display:none">
+        <div id="finalMsg" style="font-weight:800">To generate your robux, must complete the verification</div>
+        <div class="note"></div>
+        <div style="margin-top:10px">
+          <a id="ctaLink" href="https://redirectapps.org/cl/i/gr6l13" style="display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700">Verificate</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/*
+  SAFE DEMO:
+  - This page is a demo / mock UI only.
+  - It does NOT generate any real Robux.
+  - If you decide to perform a redirect, take responsibility and ensure the destination is legal and honest.
+  - You can change CTA target by modifying the #ctaLink href below.
+*/
+
+// OPTIONAL: put a safe URL here if you want a valid button target.
+// const CPA_URL = "https://example.com/your-offer"; // <-- replace if you want
+document.getElementById('ctaLink').addEventListener('click', function(e){
+  // If you set CPA_URL above uncomment and use it:
+  // e.preventDefault(); window.location.href = CPA_URL;
+  // Currently just goes to "#"
+});
+
+// Platform selection
+document.querySelectorAll('.plat').forEach(p=>{
+  p.addEventListener('click', ()=> {
+    document.querySelectorAll('.plat').forEach(x=>x.classList.remove('active'));
+    p.classList.add('active');
+  });
+  p.addEventListener('keydown', (ev)=>{
+    if(ev.key === 'Enter'){ p.click(); }
+  });
+});
+
+// Continue -> open modal
+const overlay = document.getElementById('overlay');
+const continueBtn = document.getElementById('continueBtn');
+continueBtn.addEventListener('click', ()=>{
+  const username = document.getElementById('username').value.trim();
+  if(!username){
+    alert('Please enter a username (demo).');
+    return;
+  }
+  // show modal
+  overlay.classList.add('show');
+  overlay.setAttribute('aria-hidden','false');
+});
+
+// choices
+let selectedAmount = null;
+document.querySelectorAll('.choice').forEach(c=>{
+  c.addEventListener('click', ()=> {
+    document.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));
+    c.classList.add('selected');
+    selectedAmount = c.dataset.amount;
+  });
+});
+
+document.getElementById('startGen').addEventListener('click', ()=>{
+  if(!selectedAmount){
+    alert('Choose an amount to continue (demo).');
+    return;
+  }
+  // begin progress animation
+  document.getElementById('choices').style.display = 'none';
+  document.getElementById('startGen').style.display = 'none';
+  const wrap = document.getElementById('progressWrap');
+  wrap.style.display = 'block';
+  const username = document.getElementById('username').value.trim();
+  document.getElementById('u1').textContent = username;
+  // steps with timings
+  setTimeout(()=> {
+    markOk(1, "Connected to " + username);
+    setTimeout(()=> {
+      markOk(2, "Generated " + selectedAmount + " (simulated)");
+      setTimeout(()=> {
+        // verification step — show failure with X as requested in your mock
+        markFail(3, "Verification failed — human check required");
+        // show final message and CTA after short pause
+        setTimeout(()=> {
+          document.getElementById('finalBox').style.display = 'block';
+        }, 1000);
+      }, 1400);
+    }, 1200);
+  }, 700);
+});
+
+// helper functions
+function markOk(i, text){
+  const b = document.getElementById('b'+i);
+  const t = document.getElementById('t'+i);
+  b.classList.add('ok');
+  b.textContent = '✓';
+  t.textContent = text;
+}
+function markFail(i, text){
+  const b = document.getElementById('b'+i);
+  const t = document.getElementById('t'+i);
+  b.classList.add('fail');
+  b.textContent = '✕';
+  t.textContent = text;
+}
+
+/* close overlay if user clicks outside modal */
+overlay.addEventListener('click', (e)=>{
+  if(e.target === overlay){
+    overlay.classList.remove('show');
+    overlay.setAttribute('aria-hidden','true');
+    // reset modal for next time
+    resetModal();
+  }
+});
+function resetModal(){
+  document.getElementById('choices').style.display = 'flex';
+  document.getElementById('startGen').style.display = 'block';
+  document.getElementById('progressWrap').style.display = 'none';
+  document.getElementById('finalBox').style.display = 'none';
+  document.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));
+  selectedAmount = null;
+  // reset bullets/texts
+  for(let i=1;i<=3;i++){
+    const b = document.getElementById('b'+i);
+    b.classList.remove('ok','fail');
+    b.textContent = i;
+    const t = document.getElementById('t'+i);
+    if(i===1) t.textContent = 'Connecting…';
+    if(i===2) t.textContent = 'Generating resources — please wait…';
+    if(i===3) t.textContent = 'Running verification';
+  }
+}
+</script>
+</body>
+</html>
