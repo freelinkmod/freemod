@@ -56,6 +56,7 @@ nav .nav-items {
 }
 
 .container {
+  
   max-width: 900px;
   margin: 40px auto;
   text-align: center;
@@ -64,14 +65,13 @@ nav .nav-items {
 /* Header */
 
 header {
-  height: 110vh;
-  min-height: 600px;
+  margin-top: 120px;
+  min-height: 200px;
   max-height: 800px;
   background: linear-gradient(90deg, #141414 0%, #110630 100%);
 }
 
 header .container {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
@@ -80,7 +80,6 @@ header .container {
 header .left {
   max-width: 500px;
 }
-
 h1 {
   font-size: 50px;
   line-height: 130%;
@@ -155,6 +154,7 @@ section h2 {
 
 /* Title inside featured */
 #featured h2 {
+  margin-top: 30px;
   font-size: 1.8rem;
   margin-bottom: 20px;
   color: #bb0785;
@@ -412,7 +412,6 @@ nav .menu-icon,
 }
 
 header .right img {
-  height: 460px;
   display: flex;
 }
  nav {
@@ -520,19 +519,12 @@ header .right img {
     pointer-events: auto;
     transform: translateY(0);
   }
-  header .container {
-    flex-direction: column;
-  }
 
   header {
     max-height: fit-content;
     height: fit-content;
-    padding-top: 160px;
   }
 
-  header .right img {
-    height: 350px;
-  }
 
   .container {
     padding: 0 32px;
