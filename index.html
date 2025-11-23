@@ -4,201 +4,539 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome</title>
+    <title>FreeModz - Premium Apps & Games</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
   </head>
   
   <body>
-   <nav>
-      <a href="#" class="logo"><img src="images/logo.png" alt="" /></a>
-      <div class="nav-items">
-        <a class="nav-link" href="#Home">Home</a>
-        <a class="nav-link" href="#featured">Apps</a>
-        <a class="nav-link" href="#featured">Game Generator</a>
-        <a class="nav-link" href="#features">Games</a>
-      </div>
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="nav-logo">
+          <img src="images/logo.png" alt="FreeModz" />
+          <span>FreeModz</span>
+        </a>
+        
+        <div class="nav-menu">
+          <a class="nav-link" href="#home">
+            <i class="fas fa-home"></i> Home
+          </a>
+          <a class="nav-link" href="#apps">
+            <i class="fas fa-mobile-alt"></i> Apps
+          </a>
+          <a class="nav-link" href="#generator">
+            <i class="fas fa-magic"></i> Generator
+          </a>
+          <a class="nav-link" href="#games">
+            <i class="fas fa-gamepad"></i> Games
+          </a>
+        </div>
 
-      <div class="menu-icon">
-        <img src="images/menu-icon.svg" alt="Menu" />
+        <div class="nav-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </div>
     </nav>
-
-    <div class="mobile-nav-menu">
-      <a class="nav-link" href="#Home">Home</a>
-      <a class="nav-link" href="#featured">Apps</a>
-      <a class="nav-link" href="#featured">Game Generator</a>
-      <a class="nav-link" href="#features">Games</a>
-    </div>
-<header>
-<div id="Home" class="container">
-        <h1>Download the best apps and modded games for Android & iOS</h1>
-
-      </div>
-</header>
-    
-    <div class="container">
-  <section  id="featured">
-    <h2>Apps</h2>
-    <div  class="slider">
-      <button class="slide-btn prev">&#10094;</button>
-      <div class="slide-track">
-        <div class="slide">
-          <img src="images/capcut.jpg" alt="CapCut" />
-          <div class="overlay">
-            <h3>CapCut</h3>
-            <a href="https://redirectapps.online/cl/i/gr6x9d" class="download-btn">Download</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-star"></i>
+            <span>#1 Trusted Source</span>
           </div>
-        </div>
-        <div class="slide">
-          <img src="images/ytmusic.jpg" alt="YouTube Music" />
-          <div class="overlay">
-            <h3>YouTube Music</h3>
-            <a href="https://redirectapps.online/cl/i/gr6x9d" class="download-btn">Download</a>
+          
+          <h1 class="hero-title">
+            Unlock Premium
+            <span class="gradient-text">FreeMod APK</span>
+            Experience Today
+          </h1>
+          
+          <p class="hero-description">
+            Transform your mobile experience with premium modded apps featuring unlimited coins, 
+            ad-free browsing, and exclusive features. Join millions of satisfied users worldwide.
+          </p>
+          
+          <div class="hero-buttons">
+            <a href="#apps" class="btn btn-primary">
+              <i class="fas fa-rocket"></i>
+              <span>Get Started Free</span>
+            </a>
+            <a href="#games" class="btn btn-secondary">
+              <i class="fas fa-gamepad"></i>
+              <span>Explore Premium</span>
+            </a>
           </div>
-        </div>
-        <div class="slide">
-          <img src="images/yt.jpg" alt="YouTube" />
-          <div class="overlay">
-            <h3>YouTube</h3>
-            <a href="https://redirectapps.online/cl/i/gr6x9d" class="download-btn">Download</a>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="images/netflix.jpg" alt="Netflix" />
-          <div class="overlay">
-            <h3>Netflix</h3>
-            <a href="https://redirectapps.online/cl/i/gr6x9d" class="download-btn">Download</a>
-          </div>
-        </div>
-      </div>
-      <button class="slide-btn next">&#10095;</button>
-    </div>
-  </section>
-  <section id="featured">
-    <h2>Game Generator</h2>
-    <div class="slider">
-      <button class="slide-btn prev">&#10094;</button>
-      <div class="slide-track">
-        <div class="slide">
-          <img src="images/robux.png" alt="robux" />
-          <div class="overlay">
-            <h3>Robux</h3>
-            <a href="roblox.html" class="download-btn">Enter</a>
+          
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number">5M+</span>
+              <span class="stat-label">Active Users</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">1000+</span>
+              <span class="stat-label">Modded Apps</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">99.9%</span>
+              <span class="stat-label">Success Rate</span>
+            </div>
           </div>
         </div>
         
+        <div class="hero-visual">
+          <div class="hero-image">
+            <div class="app-preview">
+              <img src="images/capcut.jpg" alt="CapCut Pro" class="preview-img active">
+              <img src="images/netflix.jpg" alt="Netflix" class="preview-img">
+              <img src="images/yt.jpg" alt="YouTube" class="preview-img">
+              <img src="images/ytmusic.jpg" alt="YouTube Music" class="preview-img">
+            </div>
+            <div class="floating-elements">
+              <div class="floating-icon icon-1"><i class="fas fa-shield-alt"></i></div>
+              <div class="floating-icon icon-2"><i class="fas fa-crown"></i></div>
+              <div class="floating-icon icon-3"><i class="fas fa-rocket"></i></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <button class="slide-btn next">&#10095;</button>
-    </div>
-  </section>
-</div>
+    </section>
+    
+    <!-- Apps Section -->
+    <section id="apps" class="apps-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Featured Collection</span>
+          </div>
+          <h2 class="section-title">Premium Apps</h2>
+          <p class="section-subtitle">Unlock the full potential of your favorite applications with our carefully curated selection</p>
+        </div>
+        
+        <div class="apps-grid">
+          <div class="app-card" data-category="media">
+            <div class="app-image">
+              <img src="images/capcut.jpg" alt="CapCut Pro">
+              <div class="app-badge">PRO</div>
+            </div>
+            <div class="app-content">
+              <div class="app-info">
+                <h3>CapCut Pro</h3>
+                <p>Professional video editing with unlimited features</p>
+                <div class="app-details">
+                  <span class="app-size"><i class="fas fa-download"></i> 125MB</span>
+                  <span class="app-rating"><i class="fas fa-star"></i> 4.9</span>
+                </div>
+              </div>
+              <a href="https://redirectapps.online/cl/i/gr6x9d" class="download-btn">
+                <i class="fas fa-download"></i>
+                <span>Download</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="app-card" data-category="music">
+            <div class="app-image">
+              <img src="images/ytmusic.jpg" alt="YouTube Music Premium">
+              <div class="app-badge">PREMIUM</div>
+            </div>
+            <div class="app-content">
+              <div class="app-info">
+                <h3>YouTube Music Premium</h3>
+                <p>Ad-free music streaming with offline downloads</p>
+                <div class="app-details">
+                  <span class="app-size"><i class="fas fa-download"></i> 89MB</span>
+                  <span class="app-rating"><i class="fas fa-star"></i> 4.8</span>
+                </div>
+              </div>
+              <a href="https://redirectapps.online/cl/i/gr6x9d" class="download-btn">
+                <i class="fas fa-download"></i>
+                <span>Download</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="app-card" data-category="video">
+            <div class="app-image">
+              <img src="images/yt.jpg" alt="YouTube Premium">
+              <div class="app-badge">PREMIUM</div>
+            </div>
+            <div class="app-content">
+              <div class="app-info">
+                <h3>YouTube Premium</h3>
+                <p>Ad-free videos with background play</p>
+                <div class="app-details">
+                  <span class="app-size"><i class="fas fa-download"></i> 142MB</span>
+                  <span class="app-rating"><i class="fas fa-star"></i> 4.9</span>
+                </div>
+              </div>
+              <a href="https://redirectapps.online/cl/i/gr6x9d" class="download-btn">
+                <i class="fas fa-download"></i>
+                <span>Download</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="app-card" data-category="streaming">
+            <div class="app-image">
+              <img src="images/netflix.jpg" alt="Netflix Mod">
+              <div class="app-badge">MOD</div>
+            </div>
+            <div class="app-content">
+              <div class="app-info">
+                <h3>Netflix Mod</h3>
+                <p>Premium streaming without subscription</p>
+                <div class="app-details">
+                  <span class="app-size"><i class="fas fa-download"></i> 78MB</span>
+                  <span class="app-rating"><i class="fas fa-star"></i> 4.7</span>
+                </div>
+              </div>
+              <a href="https://redirectapps.online/cl/i/gr6x9d" class="download-btn">
+                <i class="fas fa-download"></i>
+                <span>Download</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Game Generator Section -->
+    <section id="generator" class="generator-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <i class="fas fa-magic"></i>
+            <span>Power Tools</span>
+          </div>
+          <h2 class="section-title">Game Currency Generator</h2>
+          <p class="section-subtitle">Generate unlimited in-game currency safely and instantly for your favorite games</p>
+        </div>
+        
+        <div class="generator-card">
+          <div class="generator-bg">
+            <img src="images/robux.png" alt="Robux Generator">
+          </div>
+          <div class="generator-content">
+            <div class="generator-header">
+              <div class="generator-icon">
+                <img src="images/roblox.svg" alt="Roblox">
+              </div>
+              <div class="generator-info">
+                <h3>Robux Generator</h3>
+                <p>Generate unlimited Robux for Roblox</p>
+                <div class="generator-features">
+                  <span class="feature"><i class="fas fa-check"></i> 100% Safe</span>
+                  <span class="feature"><i class="fas fa-check"></i> No Survey</span>
+                  <span class="feature"><i class="fas fa-check"></i> Instant Delivery</span>
+                </div>
+              </div>
+            </div>
+            <div class="generator-stats">
+              <div class="stat">
+                <span class="stat-number">50K+</span>
+                <span class="stat-label">Users Generated</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Available</span>
+              </div>
+            </div>
+            <a href="roblox.html" class="generate-btn">
+              <i class="fas fa-magic"></i>
+              <span>Start Generator</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
       </section>
      
       
-      <section id="features">
-  <h2>Games</h2>
-  <div class="content">
-  <a href="https://applocked.org/cl/i/d2vl7o" target="_blank">
-    <div class="feature-card">
-      <div class="cover">
-        <img src="images/marblecover.jpg" alt="marble Cover" />
+    <!-- Games Section -->
+    <section id="games" class="games-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <i class="fas fa-gamepad"></i>
+            <span>Gaming Paradise</span>
+          </div>
+          <h2 class="section-title">Premium Games</h2>
+          <p class="section-subtitle">Experience the best modded games with unlimited features and enhanced gameplay</p>
+        </div>
+        
+        <div class="games-grid">
+          <a href="https://applocked.org/cl/i/d2vl7o" target="_blank" class="game-card">
+            <div class="game-image">
+              <img src="images/marblecover.jpg" alt="Marble Race">
+              <div class="game-overlay">
+                <div class="play-btn">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+            </div>
+            <div class="game-content">
+              <div class="game-header">
+                <div class="game-icon">
+                  <img src="images/marble.jpg" alt="Marble Race">
+                </div>
+                <div class="platform-badges">
+                  <span class="platform android"><i class="fab fa-android"></i></span>
+                  <span class="platform ios"><i class="fab fa-apple"></i></span>
+                </div>
+              </div>
+              <h3>Simple Marble Race</h3>
+              <p>Play simple marble race with unlimited marble edits!</p>
+              <div class="game-stats">
+                <span class="downloads"><i class="fas fa-download"></i> 10K+</span>
+                <span class="rating"><i class="fas fa-star"></i> 4.5</span>
+              </div>
+            </div>
+          </a>
+          
+          <a href="https://redirectapps.org/cl/i/qnko56" target="_blank" class="game-card featured">
+            <div class="game-image">
+              <img src="images/gta5cover.jpg" alt="GTA 5">
+              <div class="game-overlay">
+                <div class="play-btn">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <div class="featured-badge">TRENDING</div>
+            </div>
+            <div class="game-content">
+              <div class="game-header">
+                <div class="game-icon">
+                  <img src="images/gta5.png" alt="GTA 5">
+                </div>
+                <div class="platform-badges">
+                  <span class="platform android"><i class="fab fa-android"></i></span>
+                  <span class="platform ios"><i class="fab fa-apple"></i></span>
+                </div>
+              </div>
+              <h3>GTA 5 Mobile</h3>
+              <p>Play GTA 5 easily on your mobile device</p>
+              <div class="game-stats">
+                <span class="downloads"><i class="fas fa-download"></i> 100K+</span>
+                <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+              </div>
+            </div>
+          </a>
+          
+          <a href="https://applocked.org/cl/i/7jdq39" target="_blank" class="game-card">
+            <div class="game-image">
+              <img src="images/robloxcover.jpeg" alt="Roblox">
+              <div class="game-overlay">
+                <div class="play-btn">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+            </div>
+            <div class="game-content">
+              <div class="game-header">
+                <div class="game-icon">
+                  <img src="images/roblox.svg" alt="Roblox">
+                </div>
+                <div class="platform-badges">
+                  <span class="platform android"><i class="fab fa-android"></i></span>
+                  <span class="platform ios"><i class="fab fa-apple"></i></span>
+                </div>
+              </div>
+              <h3>Roblox MOD</h3>
+              <p>Enjoy Roblox with unlimited Robux</p>
+              <div class="game-stats">
+                <span class="downloads"><i class="fas fa-download"></i> 250K+</span>
+                <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+              </div>
+            </div>
+          </a>
+          
+          <a href="https://redirectapps.org/cl/i/pqo3mn" target="_blank" class="game-card">
+            <div class="game-image">
+              <img src="images/skatecover.jpeg" alt="Skateboarding">
+              <div class="game-overlay">
+                <div class="play-btn">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+            </div>
+            <div class="game-content">
+              <div class="game-header">
+                <div class="game-icon">
+                  <img src="images/skate.png" alt="Skateboarding">
+                </div>
+                <div class="platform-badges">
+                  <span class="platform android"><i class="fab fa-android"></i></span>
+                  <span class="platform ios"><i class="fab fa-apple"></i></span>
+                </div>
+              </div>
+              <h3>PushSB MOD</h3>
+              <p>Enjoy the best skate game on Android & iOS</p>
+              <div class="game-stats">
+                <span class="downloads"><i class="fas fa-download"></i> 75K+</span>
+                <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+              </div>
+            </div>
+          </a>
+          
+          <a href="https://redirectapps.online/cl/i/l7k8vd" target="_blank" class="game-card">
+            <div class="game-image">
+              <img src="images/forza.jpg" alt="Forza">
+              <div class="game-overlay">
+                <div class="play-btn">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+            </div>
+            <div class="game-content">
+              <div class="game-header">
+                <div class="game-icon">
+                  <img src="images/forzahorizon.png" alt="Forza">
+                </div>
+                <div class="platform-badges">
+                  <span class="platform android"><i class="fab fa-android"></i></span>
+                  <span class="platform ios"><i class="fab fa-apple"></i></span>
+                </div>
+              </div>
+              <h3>Forza Horizon 5 Mobile</h3>
+              <p>Enjoy Forza Horizon 5 on mobile</p>
+              <div class="game-stats">
+                <span class="downloads"><i class="fas fa-download"></i> 150K+</span>
+                <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
-      <div class="platform-icons">
-        <img src="images/android-logo.png" alt="Android" />
-        <img src="images/apple-black-logo.png" alt="iOS" />
-      </div>
-      <div class="icon">
-        <img src="images/marble.jpg" alt="marble" />
-      </div>
-      <h3>Simple marble rac</h3>
-      <p>Play simple marble race with unlimited marble edits !</p>
-    </div>
-    </a>
-    <a href="https://redirectapps.org/cl/i/qnko56" target="_blank">
-    <div class="feature-card">
-      <div class="cover">
-        <img src="images/gta5cover.jpg" alt="GTA 5 Cover" />
-      </div>
-      <div class="platform-icons">
-        <img src="images/android-logo.png" alt="Android" />
-        <img src="images/apple-black-logo.png" alt="iOS" />
-      </div>
-      <div class="icon">
-        <img src="images/gta5.png" alt="GTA 5" />
-      </div>
-      <h3>GTA 5 MOBILE</h3>
-      <p>Play GTA 5 easily on your mobile</p>
-    </div>
-    </a>
+    </section>
 
-    <a href="https://applocked.org/cl/i/7jdq39" target="_blank">
-    <div class="feature-card">
-      <div class="cover">
-        <img src="images/robloxcover.jpeg" alt="roblox Cover" />
-      </div>
-      <div class="platform-icons">
-        <img src="images/android-logo.png" alt="Android" />
-        <img src="images/apple-black-logo.png" alt="iOS" />
-      </div>
-      <div class="icon">
-        <img src="images/roblox.svg" alt="roblox" />
-      </div>
-      <h3>Roblox MOD</h3>
-      <p>Enjoy Roblox with unlimited Robux</p>
-    </div>
-    </a>
-    <a href="https://redirectapps.org/cl/i/pqo3mn" target="_blank">
-    <div class="feature-card">
-      <div class="cover">
-        <img src="images/skatecover.jpeg" alt="skate Cover" />
-      </div>
-      <div class="platform-icons">
-        <img src="images/android-logo.png" alt="Android" />
-        <img src="images/apple-black-logo.png" alt="iOS" />
-      </div>
-      <div class="icon">
-        <img src="images/skate.png" alt="skate" />
-      </div>
-      <h3>PushSB MOD</h3>
-      <p>Enjoy the best skate game on android & IOS</p>
-    </div></a>
-
-    <a href="https://redirectapps.online/cl/i/l7k8vd" target="_blank">
-    <div class="feature-card">
-      <div class="cover">
-        <img src="images/forza.jpg" alt="FORZA Cover" />
-      </div>
-      <div class="platform-icons">
-        <img src="images/android-logo.png" alt="Android" />
-        <img src="images/apple-black-logo.png" alt="iOS" />
-      </div>
-      <div class="icon">
-        <img src="images/forzahorizon.png" alt="FORZA" />
-      </div>
-      <h3>Forza Horizon 5 MOBILE</h3>
-      <p>Enjoy Forza Horizon 5 on Mobile </p>
-    </div></a>
-  </div>
-</section>
 
 
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <i class="fas fa-star"></i>
+            <span>Our Advantages</span>
+          </div>
+          <h2 class="section-title">Why Choose FreeModz?</h2>
+          <p class="section-subtitle">Discover what makes us the #1 platform for premium mobile content and modded experiences</p>
+        </div>
+        
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>100% Safe & Secure</h3>
+            <p>All our apps are thoroughly tested and verified to ensure your device's safety</p>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Regular Updates</h3>
+            <p>We constantly update our collection with the latest versions and new releases</p>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-ban"></i>
+            </div>
+            <h3>Ad-Free Experience</h3>
+            <p>Enjoy premium features without annoying advertisements or interruptions</p>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-download"></i>
+            </div>
+            <h3>Instant Downloads</h3>
+            <p>Fast and reliable download servers for immediate access to your favorite apps</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="copyright">
-          <p>Copyright playdownload © 2025</p>
-          <div class="socials">
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img src="images/logo.png" alt="FreeModz">
+              <span>FreeModz</span>
+            </div>
+            <p>Your ultimate destination for premium modded apps and games. Experience unlimited features and premium content for free.</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="#apps">Premium Apps</a></li>
+              <li><a href="#games">Modded Games</a></li>
+              <li><a href="#generator">Generators</a></li>
+              <li><a href="#">New Releases</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Installation Guide</a></li>
+              <li><a href="#">Report Issues</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">DMCA</a></li>
+              <li><a href="#">Disclaimer</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <div class="copyright">
+            <p>&copy; 2025 FreeModz. All rights reserved.</p>
+          </div>
+          <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Support</a>
           </div>
         </div>
       </div>
     </footer>
 
-    <script src="main.js">
-      
-    </script>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="main.js"></script>
   </body>
 </html>
